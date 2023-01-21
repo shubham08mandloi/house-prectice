@@ -1,0 +1,6 @@
+<%= form_for @rooms, url: rooms_path do |f| %>
+<%= f.label :room_name %>
+<%= f.text_field :room_name %>
+<br>
+<%= f.submit :submit %>
+<% end %>

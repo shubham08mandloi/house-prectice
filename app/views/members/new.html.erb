@@ -1,0 +1,6 @@
+<%= form_for @members, url: members_path do |f| %>
+<%= f.label :member_name %>
+<%= f.text_field :member_name %>
+<br>
+<%= f.submit :submit %>
+<% end %>

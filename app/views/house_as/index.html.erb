@@ -1,0 +1,29 @@
+<%= link_to "Create", new_house_a_path %>
+<br>
+<table>
+  <tr>
+  	<th>No.</th>
+    <th>House Name</th>
+    <th>Rooms</th>
+    <th>Total Rooms</th>
+    <th>Members</th>
+    <th>Total Member</th>
+  </tr>
+  <% @house_as.each_with_index do |house_a,i| %>
+  <tr>
+  	<td><%= i+1 %>.</td>
+    <td><%= house_a.house_name %></td>
+    <td><%= house_a.rooms.pluck(:room_name).join(', ') %></td>
+    <td><%=  house_a.rooms.count %></td>
+    <td><%=  house_a.members.pluck(:member_name).join(', ') %></td>
+    <td><%=  house_a.members.count %></td>
+  </tr>
+  <% end %>
+</table>
+
+
+<style type="text/css">
+	table, th, td {
+	  border: 1px solid black;
+	}
+</style>
